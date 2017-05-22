@@ -18,9 +18,8 @@ int Correo::obtenerConteoAtributos()
 
 Correo::Correo()
 {
-
-//atributosCorreo = new MensajeCorreo();
-
+            this->correoCorreoElectronico="direccion@prueba.com";
+            this->correoNombreRemitente="nombreDePrueba";
 
 }
 
@@ -43,6 +42,7 @@ Correo::~Correo()
 {
     delete []this->correoCorreoElectronico;
     delete []this->correoNombreRemitente;
+    conteoAtributos--;
 }
 
 
@@ -62,32 +62,51 @@ Correo::~Correo()
 
 
         void Correo::correoEnviarMensaje(){
-            char *para="para";
-            char *asunto="asunto";
-            char *cC="Cc";
-            char *mensaje="Mensjae";
-            listaAtributos[conteoAtributos]=new MensajeCorreo("1", "2","3","4");
+            char para[30];
+            cout <<"Ingrese el nombre del destinatario"<<endl;
+            cin>>para;
+            char cC[30];
+            cout <<"si tiene Cc ingreselo aqui"<<endl;
+            cin>>cC;
+            char asunto[30];
+            cout<<"Ingrese el asunto"<<endl;
+            cin>>asunto;
+            char mensaje[100];
+            cout<<"Ingrese aqui todo su mensaje"<<endl;
+            cin>>mensaje;
+            listaAtributos[conteoAtributos]=new MensajeCorreo(para,cC,asunto,mensaje);
             conteoAtributos++;
-            cout<<"Mensaje enviado Exitosamente"<<endl;
+            cout<<"Su mensaje ha sido enviado Exitosamente"<<endl;
         }
 
 
         void Correo::correoHistorialMensaje(int numero){
+            if(conteoAtributos<=0){
+                cout<<"Bandeja de salida vacia"<<endl;
 
-            //cout<<"Asunto"<<listaAtributos[numero]->obtenerMensajeAsunto();
-        for(int i=0;i<conteoAtributos;i++){
-            cout<<"Asunto"<<listaAtributos[i]->obtenerMensajeAsunto();
+            }else{
+                    for(int i=0;i<conteoAtributos;i++){
+                        if(numero==1){
+                           cout<<"Asunto: "<<listaAtributos[i]->obtenerMensajeAsunto();
+                        }else{
+                            listaAtributos[i]->mensajeMostrarDatos();
+
+                        }
+
+
+                    }
 
             }
+
 
         }
 
 
 void Correo::mostrarRemitentes(){
 
-cout<<"Correo Remitente"<<this->correoCorreoElectronico<<endl;
-cout<<"Nombre Remitente"<<this->correoNombreRemitente<<endl;
-
+cout<<"Correo Remitente: "<<this->correoCorreoElectronico<<endl;
+cout<<"Nombre Remitente: "<<this->correoNombreRemitente<<endl;
+cout<<endl;
 }
 
 

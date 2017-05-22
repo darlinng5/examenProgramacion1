@@ -19,7 +19,6 @@ void crearRemitente();
 
 int main()
 {
-    int x;
    Correo correo1;
 
    char centinela='s';
@@ -36,6 +35,7 @@ int main()
         verRemitentes();
         break;
     case 3:
+            crearRemitente();
             correo1.correoEnviarMensaje();
             contadorMensajes++;
 
@@ -56,9 +56,14 @@ int main()
             */
 
         break;
-    case 4:
+    case 4:{
 
-            correo1.correoHistorialMensaje(0);
+                correo1.correoHistorialMensaje(2);
+
+
+    }
+
+
 
     break;
 
@@ -85,10 +90,6 @@ int main()
 
 //   Correo *correo2=new Correo("darlinng5@gmail.com","DarlinGonzales");
      //       correo1->correoGuardarMensaje();
-
-
-
-
 
 
 
@@ -132,7 +133,14 @@ void crearRemitente(){
     if(totalRemitentes>10){
         cout<<"No se puede crear otro remitente porque ya creo el maximo de capacidad"<<endl;
     }else{
-        listaRemitentes[totalRemitentes] = new Correo("darlinng5@gmail.com","DarlinGonzales");
+        char correo[30];
+        cout<<"Ingrese la direccion del correo"<<endl;
+        cin>>correo;
+        char nombre[30];
+        cout<<"Ingrese el nombre del remitente"<<endl;
+        cin>>nombre;
+
+        listaRemitentes[totalRemitentes] = new Correo(correo,nombre);
         totalRemitentes++;
     }
 

@@ -10,7 +10,7 @@ using namespace std;
 
 MensajeCorreo::MensajeCorreo()
 {
-    this->mensajePara="vacio@vacio.com";
+    this->mensajePara="prueba@prueba.com";
     this->mensajeAsunto="vacio";
     this->mensajeCc="vacio";
     this->mensajeMensaje="vacio";
@@ -98,7 +98,6 @@ MensajeCorreo::~MensajeCorreo()
         }
 
         void MensajeCorreo::mensajeMostrarDatos(){
-
             cout<<"Para: "<<this->mensajePara<<endl;
             cout<<"Cc: "<<this->mensajeCc<<endl;
             cout<<"Asunto: "<<this->mensajeAsunto<<endl;
