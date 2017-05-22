@@ -7,6 +7,7 @@ using namespace std;
 int totalRemitentes=0;
 int posicionRemitentes[10];
 int contadorMensajes=0;
+int control=0;
 
 Correo *listaRemitentes[10];
 
@@ -15,7 +16,7 @@ Correo *listaRemitentes[10];
 
 int posicionRemitenteMetodo();
 void verRemitentes();
-void crearRemitente();
+void crearRemitente(int);
 
 int main()
 {
@@ -29,15 +30,14 @@ int main()
     cin>>opcion;
     switch (opcion){
     case 1:
-        crearRemitente();
+        crearRemitente(1);
         break;
     case 2:
         verRemitentes();
         break;
     case 3:
-            crearRemitente();
+            crearRemitente(2);
             correo1.correoEnviarMensaje();
-            contadorMensajes++;
 
             /*
             if(totalRemitentes>0){
@@ -57,8 +57,23 @@ int main()
 
         break;
     case 4:{
+            int eleccion=0;
+            cout<<"Presione 1 para mostrar solo los Asuntos de todos los mensajes, O cualquier otro numero para ver todo el mensaje"<<endl;
+            cin>>eleccion;
 
+                if(eleccion==1){
+                    correo1.correoHistorialMensaje(1);
+                }else{
                 correo1.correoHistorialMensaje(2);
+                }
+
+
+              for(int i=0;i<totalRemitentes;i++){
+                if(posicionRemitentes[i]!=0){
+                    listaRemitentes[i]->mostrarRemitentes();
+                }
+
+              }
 
 
     }
@@ -129,7 +144,7 @@ void verRemitentes(){
 }
 
 
-void crearRemitente(){
+void crearRemitente(int num){
     if(totalRemitentes>10){
         cout<<"No se puede crear otro remitente porque ya creo el maximo de capacidad"<<endl;
     }else{
@@ -141,6 +156,11 @@ void crearRemitente(){
         cin>>nombre;
 
         listaRemitentes[totalRemitentes] = new Correo(correo,nombre);
+
+        if(num==2){
+         posicionRemitentes[totalRemitentes]=1;
+         //control++;
+        }
         totalRemitentes++;
     }
 

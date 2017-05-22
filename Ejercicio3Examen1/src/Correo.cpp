@@ -29,14 +29,7 @@ Correo::Correo()
      strcpy(this->correoCorreoElectronico,correoElectronico);
      this->correoNombreRemitente=new char[strlen(nombreRemitente)+1];
      strcpy(this->correoNombreRemitente,nombreRemitente);
-
-    // correoEnviarMensaje();//cuando creo un objeto en el main y pasa por aqui, creo un nuevo atributo
-
-
     }
-
-
-
 
 Correo::~Correo()
 {
@@ -44,7 +37,6 @@ Correo::~Correo()
     delete []this->correoNombreRemitente;
     conteoAtributos--;
 }
-
 
         char Correo::establecerCorreoCorreoElectronico(char *correoElectronico){
             delete [] this->correoCorreoElectronico;
@@ -86,14 +78,17 @@ Correo::~Correo()
 
             }else{
                     for(int i=0;i<conteoAtributos;i++){
+                        cout<<"Atributos de Mensaje No."<<(i+1)<<endl;
                         if(numero==1){
-                           cout<<"Asunto: "<<listaAtributos[i]->obtenerMensajeAsunto();
+                           cout<<"Asunto: "<<listaAtributos[i]->obtenerMensajeAsunto()<<endl;
+                           cout<<"Id de remitente: "<<conteoAtributos<<endl;
                         }else{
                             listaAtributos[i]->mensajeMostrarDatos();
+                            cout<<"Id de remitente: "<<conteoAtributos<<endl;
 
                         }
 
-
+                        cout<<endl;
                     }
 
             }

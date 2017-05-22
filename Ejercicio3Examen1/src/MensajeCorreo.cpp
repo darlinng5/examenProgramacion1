@@ -98,10 +98,10 @@ MensajeCorreo::~MensajeCorreo()
         }
 
         void MensajeCorreo::mensajeMostrarDatos(){
-            cout<<"Para: "<<this->mensajePara<<endl;
-            cout<<"Cc: "<<this->mensajeCc<<endl;
-            cout<<"Asunto: "<<this->mensajeAsunto<<endl;
-            cout<<"Mensaje: "<<this->mensajeMensaje<<endl;
+            cout<<"Para:       "<<this->mensajePara<<endl;
+            cout<<"Cc:         "<<this->mensajeCc<<endl;
+            cout<<"Asunto:     "<<this->mensajeAsunto<<endl;
+            cout<<"Mensaje:    "<<this->mensajeMensaje<<endl;
 
         }
 
