@@ -81,10 +81,8 @@ Correo::~Correo()
                         cout<<"Atributos de Mensaje No."<<(i+1)<<endl;
                         if(numero==1){
                            cout<<"Asunto: "<<listaAtributos[i]->obtenerMensajeAsunto()<<endl;
-                           cout<<"Id de remitente: "<<conteoAtributos<<endl;
                         }else{
                             listaAtributos[i]->mensajeMostrarDatos();
-                            cout<<"Id de remitente: "<<conteoAtributos<<endl;
 
                         }
 

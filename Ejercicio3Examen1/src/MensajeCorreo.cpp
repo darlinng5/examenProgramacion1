@@ -5,9 +5,6 @@
 using namespace std;
 
 
-
-
-
 MensajeCorreo::MensajeCorreo()
 {
     this->mensajePara="prueba@prueba.com";
@@ -15,11 +12,8 @@ MensajeCorreo::MensajeCorreo()
     this->mensajeCc="vacio";
     this->mensajeMensaje="vacio";
 
-
 }
-
 MensajeCorreo::MensajeCorreo(char *para,char *cC,char *asunto,char *mensaje){
-
     this->mensajePara=new char[strlen(para)+1];
     strcpy(this->mensajePara,para);
 
@@ -31,12 +25,7 @@ MensajeCorreo::MensajeCorreo(char *para,char *cC,char *asunto,char *mensaje){
     this->mensajeMensaje=new char[strlen(mensaje)+1];
     strcpy(this->mensajeMensaje,mensaje);
 
-
-
-
 }//fin de constructor con parametros
-
-
 
 MensajeCorreo::~MensajeCorreo()
 {
