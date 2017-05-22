@@ -74,8 +74,11 @@ Correo::~Correo()
 
         void Correo::correoHistorialMensaje(int numero){
 
-            cout<<"Asunto"<<listaAtributos[numero]->obtenerMensajeAsunto();
+            //cout<<"Asunto"<<listaAtributos[numero]->obtenerMensajeAsunto();
+        for(int i=0;i<conteoAtributos;i++){
+            cout<<"Asunto"<<listaAtributos[i]->obtenerMensajeAsunto();
 
+            }
 
         }
 

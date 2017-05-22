@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1495341018 source:c:\users\darlin\examenprogramacion1\prueba1\main.cpp
-	<iostream>
-	<stdio.h>
-	<ctype.h>
-	<cstring>
-

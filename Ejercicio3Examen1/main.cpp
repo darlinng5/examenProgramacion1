@@ -5,40 +5,21 @@
 using namespace std;
 
 int totalRemitentes=0;
-int posicionRemitente[10];
+int posicionRemitentes[10];
+int contadorMensajes=0;
+
 Correo *listaRemitentes[10];
 
 
 
-void verRemitentes(){
-    if(totalRemitentes!=0){
-        for(int i=0;i<totalRemitentes;i++){
-            listaRemitentes[i]->mostrarRemitentes();
-        }
-    }else{
 
-    cout <<"Aun no a ingresado ningun remitente"<<endl;
-    }
-
-
-
-}
-
-void crearRemitente(){
-    if(totalRemitentes>10){
-        cout<<"No se puede crear otro remitente porque ya creo el maximo de capacidad"<<endl;
-    }else{
-        listaRemitentes[totalRemitentes] = new Correo("darlinng5@gmail.com","DarlinGonzales");
-        totalRemitentes++;
-    }
-
-
-
-}
+int posicionRemitenteMetodo();
+void verRemitentes();
+void crearRemitente();
 
 int main()
 {
-
+    int x;
    Correo correo1;
 
    char centinela='s';
@@ -55,20 +36,32 @@ int main()
         verRemitentes();
         break;
     case 3:
+            correo1.correoEnviarMensaje();
+            contadorMensajes++;
+
+            /*
             if(totalRemitentes>0){
-                cout<<"Seleccione un remitente"<<endl;
-                correo1.correoEnviarMensaje();
+                //int numero;
+                // numero=posicionRemitenteMetodo();
+                //posicionRemitentes[contadorMensajes]=numero;
+                //correo1.correoEnviarMensaje();
+
             }else{
-                cout<<"Llene los siguientes datos"<<endl;
+
                 crearRemitente();
                 correo1.correoEnviarMensaje();
-
-
+                posicionRemitentes[0]=0;//el cero de ellos es cero
+                contadorMensajes++;
             }
+            */
 
         break;
     case 4:
-       correo1.correoHistorialMensaje(0);
+
+            correo1.correoHistorialMensaje(0);
+
+    break;
+
     default:
         cout<<"Seleccione una opcion valida"<<endl;
         break;
@@ -90,7 +83,7 @@ int main()
 
 
 
-   // Correo *correo1=new Correo("darlinng5@gmail.com","DarlinGonzales");
+//   Correo *correo2=new Correo("darlinng5@gmail.com","DarlinGonzales");
      //       correo1->correoGuardarMensaje();
 
 
@@ -102,4 +95,47 @@ int main()
 
 
     return 0;
+}
+
+
+int posicionRemitenteMetodo(){
+int x=0;
+
+
+    for(int i=0;i<totalRemitentes;i++){
+            cout<<"Posicion: "<<i<<" : ";
+            listaRemitentes[i]->mostrarRemitentes();
+            cout <<""<<endl;
+    }
+
+cout<<"Elija el numero del remitente que desea seleccionar";
+cin>>x;
+return x;
+}
+
+void verRemitentes(){
+    if(totalRemitentes!=0){
+        for(int i=0;i<totalRemitentes;i++){
+            listaRemitentes[i]->mostrarRemitentes();
+        }
+    }else{
+
+    cout <<"Aun no a ingresado ningun remitente"<<endl;
+    }
+
+
+
+}
+
+
+void crearRemitente(){
+    if(totalRemitentes>10){
+        cout<<"No se puede crear otro remitente porque ya creo el maximo de capacidad"<<endl;
+    }else{
+        listaRemitentes[totalRemitentes] = new Correo("darlinng5@gmail.com","DarlinGonzales");
+        totalRemitentes++;
+    }
+
+
+
 }

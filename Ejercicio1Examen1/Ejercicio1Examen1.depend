@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1495426443 source:c:\users\darlin\desktop\tareas u\segundo periodo\filosofia\semana 1\ejercicio1examen1\main.cpp
+	<iostream>
+	<stdio.h>
+	<ctype.h>
+	<cstring>
+
