@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1495413765 source:c:\users\darlin\examenprogramacion1\ejercicio3examen1\main.cpp
+	<iostream>
+	"Correo.h"
+	<iostream>
+
+1495414105 source:c:\users\darlin\examenprogramacion1\ejercicio3examen1\src\correo.cpp
+	"Correo.h"
+	<cstring>
+	<iostream>
+
+1495414176 c:\users\darlin\examenprogramacion1\ejercicio3examen1\include\correo.h
+	"MensajeCorreo.h"
+
+1495412967 source:c:\users\darlin\examenprogramacion1\ejercicio3examen1\src\mensajecorreo.cpp
+	"MensajeCorreo.h"
+	<cstring>
+	<iostream>
+
+1495410388 c:\users\darlin\examenprogramacion1\ejercicio3examen1\include\mensajecorreo.h
+
