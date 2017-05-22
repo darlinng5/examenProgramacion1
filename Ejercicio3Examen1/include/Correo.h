@@ -14,9 +14,9 @@ class Correo
         char establecerCorreoCorreoElectronico(char *);
         char establecerCorreoNombreRemitente(char *);
 
-        void correoGuardarMensaje();
+        void correoHistorialMensaje(int);
         void correoEnviarMensaje();
-        void establecerUnMensaje();
+        void mostrarRemitentes();
 
 
 

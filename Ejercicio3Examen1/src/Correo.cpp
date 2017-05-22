@@ -31,7 +31,7 @@ Correo::Correo()
      this->correoNombreRemitente=new char[strlen(nombreRemitente)+1];
      strcpy(this->correoNombreRemitente,nombreRemitente);
 
-     correoEnviarMensaje();//cuando creo un objeto en el main y pasa por aqui, creo un nuevo atributo
+    // correoEnviarMensaje();//cuando creo un objeto en el main y pasa por aqui, creo un nuevo atributo
 
 
     }
@@ -68,23 +68,23 @@ Correo::~Correo()
             char *mensaje="Mensjae";
             listaAtributos[conteoAtributos]=new MensajeCorreo("1", "2","3","4");
             conteoAtributos++;
-            cout<<"LLeva: "<<conteoAtributos<<endl;
+            cout<<"Mensaje enviado Exitosamente"<<endl;
         }
 
 
-        void Correo::correoGuardarMensaje(){
-           for(int i=0;i<3;i++){
-             correoEnviarMensaje();
-           }
+        void Correo::correoHistorialMensaje(int numero){
 
-           for(int i=0;i<3;i++){
-            listaAtributos[i]->mensajeMostrarDatos();
-           }
+            cout<<"Asunto"<<listaAtributos[numero]->obtenerMensajeAsunto();
 
 
         }
 
 
+void Correo::mostrarRemitentes(){
 
+cout<<"Correo Remitente"<<this->correoCorreoElectronico<<endl;
+cout<<"Nombre Remitente"<<this->correoNombreRemitente<<endl;
+
+}
 
 
